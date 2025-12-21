@@ -1,0 +1,27 @@
+Outline:
+1. Working with Image Data: Import, visualize, and extract information from different image types and image data types.
+2. Preprocessing: Preprocess images to improve algorithms.
+   * Enhancing contrast
+   * Noise removal techniques
+   * Block processing
+   * Quality metrics
+3. Color Segmentation: Use color spaces, regions of interest, and the Color Thresholder app to segment images based on color.
+4. Texture Segmentation: Analyze texture within images for segmentation.
+5. Improving Segmentations: Refine your segmentation with morphological operations. Automate segmentation from a seed mask using iterative techniques.
+6. Finding and Analyzing Objects: Separate overlapping objects in your segmentation. Label objects and measure their properties, such as area and perimeter.
+7. Detecting Edges and Shapes: Detect edges of objects and identify lines and circles in an image.
+8. Batch Processing: Process large numbers of files using the Image Batch Processor app and image datastores.
+9. Aligning Images with Image Registration: Register images using phase correlation, control points, and feature matching.
+
+Content:
+1. Working with Image Data: 
+How can you use satellite images to quantify and visualize glacial melt?
+These pictures are stored as indexed images. You will need to load, visualize, extract metadata from, perform calculations on, and binarize these images. Indexed images are one of many ways images can be represented. Image files often have metadata including comments, size, memory required, and the creation date.
+
+a. Extracting Image File Information:
+info = imfinfo("filename.png") 
+> infoXX = imfinfo("xx.png")
+struct.FieldName / variable = struct with fields: value  
+> takenXX = infoXX.CreationTime 
+
+* Dictionary of Python: takenXX = infoXX['CreationTime']
