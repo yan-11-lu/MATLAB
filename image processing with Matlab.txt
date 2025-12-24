@@ -16,7 +16,8 @@ Outline:
 Content:
 1. Working with Image Data: 
 How can you use satellite images to quantify and visualize glacial melt?
-These pictures are stored as indexed images. You will need to load, visualize, extract metadata from, perform calculations on, and binarize these images. Indexed images are one of many ways images can be represented. Image files often have metadata including comments, size, memory required, and the creation date.
+These pictures are stored as indexed images, which work differently from the RGB and grayscale images.
+You will need to load, visualize, extract metadata from, perform calculations on, and binarize these images. Indexed images are one of many ways images can be represented. Image files often have metadata including comments, size, memory required, and the creation date.
 
 a. Extracting Image File Information:
 info = imfinfo("filename.png") 
@@ -25,3 +26,30 @@ struct.FieldName / variable = struct with fields: value
 > takenXX = infoXX.CreationTime 
 
 * Dictionary of Python: takenXX = infoXX['CreationTime']
+
+b. Loading and Viewing Indexed Images:
+This code sets up the activity.
+> infoXX = imfinfo("xx.png")
+> takenXX = infoXX.ColorType
+[I,map] = imread("filename.png");
+> [XX,mapXX] = imread("xx.png");
+imshow(I,map)
+> imshow(glacierXX,mapXX)
+title("Image Title")
+> title("XXXX")
+rgb = ind2rgb(I,map);
+gs = ind2gray(I,map);
+> rgb = ind2rgb(XX,mapXX);
+> gs = ind2gray(XX,mapXX);
+imshowpair(I1,I2,"montage")
+* You can use the "montage" method of imshowpair to display images side-by-side.
+> imshowpair(gsXX,gsXX,"montage")
+[I,m] = imapprox(glacier1980,map1980,2);
+imshow(I,m)
+* imapprox: Approximate indexed image by reducing number of colors
+> [newimage,newmap] = imapprox(glacier1980,map1980,2);
+> imshow(newimage,newmap)
+
+* Used ";" to separate images.
+
+
